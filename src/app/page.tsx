@@ -1,5 +1,4 @@
 import { TMDBMovie } from "@/models/tmdb-movie";
-import Image from "next/image";
 import "tailwindcss/tailwind.css";
 import MoviesGrid from "../components/movies-grid";
 interface TrendingMoviesResponse {
