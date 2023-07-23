@@ -1,6 +1,7 @@
 import { TMDBMovie } from "@/models/tmdb-movie";
 import Image from "next/image";
 import "tailwindcss/tailwind.css";
+import MoviesGrid from "../components/movies-grid";
 interface TrendingMoviesResponse {
   results: TMDBMovie[];
 }
@@ -13,20 +14,8 @@ export default async function Page() {
   const movies: TMDBMovie[] = data.results;
 
   return (
-    <div className="flex flex-row flex-wrap">
-      {movies.map((movie, index) => (
-        <div key={index}>
-          <Image
-            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-            alt={movie.overview}
-            layout="intrinsic"
-            width={300}
-            height={500}
-            className="transform hover:scale-105 transition-transform duration-300 cursor-pointer"
-          />
-          <p>{movie.original_title}</p>
-        </div>
-      ))}
+    <div>
+      <MoviesGrid movies={movies} />
     </div>
   );
 }
