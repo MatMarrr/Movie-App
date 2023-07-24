@@ -1,0 +1,13 @@
+:root {
+  --text: #181307;
+  --background: #faf7ef;
+  --primary: #2d4895;
+  --secondary: #e8d9b0;
+  --accent: #2f4c9d;
+
+  --dark_text: #fafafa;
+  --dark_background: #050505;
+  --dark_primary: #2d4895;
+  --dark_secondary: #27200c;
+  --dark_accent: #899fdc;
+}

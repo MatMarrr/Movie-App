@@ -1,6 +1,7 @@
 import { TMDBMovie } from "@/models/tmdb-movie";
 import "tailwindcss/tailwind.css";
 import MoviesGrid from "../components/movies-grid";
+import PageHeader from "@/components/page-header";
 interface TrendingMoviesResponse {
   results: TMDBMovie[];
 }
@@ -14,6 +15,7 @@ export default async function Page() {
 
   return (
     <div>
+      <PageHeader title="Trending Movies"/>
       <MoviesGrid movies={movies} />
     </div>
   );

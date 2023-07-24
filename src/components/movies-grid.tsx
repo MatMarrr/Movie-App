@@ -7,7 +7,7 @@ interface MoviesGridProps {
 
 export default function MoviesGrid({ movies }: MoviesGridProps) {
   return (
-    <div className="flex flex-row flex-wrap justify-center gap-8">
+    <div className="flex flex-row flex-wrap justify-center gap-8 pb-8">
       {movies.map((movie) => (
         <MovieCard
           id={movie.id}

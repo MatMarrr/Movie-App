@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Navbar from "../components/navbar";
 import "tailwindcss/tailwind.css";
+import "./globals.css";
+import NextTopLoader from "nextjs-toploader";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,6 +27,7 @@ export default function RootLayout({
         className={`${poppins.className} bg-dark-background text-dark-text`}
       >
         <div>
+          <NextTopLoader color="#00CCCC" />
           <Navbar />
           {children}
         </div>

@@ -23,27 +23,29 @@ export default async function Page({ params: { movieId } }: PageProps) {
   const movieDetails: MovieDetailsResponse = await response.json();
 
   return (
-    <div className="flex flex-col">
-      <div className="w-full h-full flex items-center">
-        <div className="relative w-1/2 h-full">
-          <Image
-            src={`https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`}
-            alt={movieDetails.overview}
-            layout="intrinsic"
-            width={1000}
-            height={600}
-            placeholder="blur"
-            blurDataURL={bluredPoster}
-            className={`${styles.movieImage} rounded-lg`}
-          />
-        </div>
-        <div className="w-1/2 h-full flex flex-col justify-start p-8">
-          <p className="text-5xl mb-5">{movieDetails.title}</p>
-          <p className="mb-3">{movieDetails.overview}</p>
-          <p>{movieDetails.vote_average.toFixed(1)}/10</p>
+    <div className={styles.moviePageContainer}>
+      <div className={styles.movieContainer}>
+        <Image
+          src={`https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`}
+          alt={movieDetails.overview}
+          layout="intrinsic"
+          width={1000}
+          height={600}
+          placeholder="blur"
+          blurDataURL={bluredPoster}
+          className={styles.movieImage}
+        />
+        <div className={styles.movieDetailsContainer}>
+          <p className={styles.movieTitle}>{movieDetails.title}</p>
+          <p className={styles.movieDetailText}>{movieDetails.overview}</p>
+          <p className={styles.movieRating}>
+          Average ratings: {movieDetails.vote_average.toFixed(1)}/10
+          </p>
         </div>
       </div>
-      <Link href="/">Back</Link>
+      <Link className={styles.goBackButton} href="/">
+        Back
+      </Link>
     </div>
   );
 }
